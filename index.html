@@ -78,19 +78,6 @@
         <label for="key5-1">Show</label>
 </fieldset>
     </div>
-                <div data-role="collapsible">
-        <h3>Custom Token</h3>
-<p>Some iOS users experience issues with not getting data at all. If that's the case, go to the Fitbit page that says
-  "Logged in as [name]" and copy the token that displays at the bottom of the page in bold. Paste it in this box below,
-  hit save, and then close the watchface and open it again. It should load data properly.
-</p>
-<fieldset data-role="controlgroup" data-mini="true">
-	 <legend><h4>Token</h4></legend>
-	    <div class="ui-field-contain">
-	      <input name="token" id="token" placeholder="324049j23o9hjf8u2jf9un..." value="1337" data-mini="true" type="text" maxlength="1000">
-	    </div>
-	</fieldset>
-    </div>
 </div>
 <br />
         <div class="ui-body ui-body-c">
@@ -104,14 +91,12 @@
     <script>
       function saveOptions() {
         var options = {
-          //Bools, ints, etc.
           'btdisalert':     Number( $("input[name=key0]:checked").val() ),
       	  'btrealert':     Number( $("input[name=key1]:checked").val() ),
       	  'date':     Number( $("input[name=key3]:checked").val() ),
       	  'batterybar':     Number( $("input[name=key4]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
       	  'debug':     Number( $("input[name=key5]:checked").val() ),
-      	  'token':     $("input[name=token]").val(),
         }
         console.log("Options: " + options);
         return options;
@@ -136,9 +121,7 @@
           $("input[name=key4]").checkboxradio('refresh');
           $("input[name=key5][id=key5-"+ls_pto["debug"]+"]").prop('checked',true);
           $("input[name=key5]").checkboxradio('refresh');
-          
-          $("input[name=token]").val(ls_pto["token"]);
-        }
+          }
        }
         $("#b-cancel").click(function() {
           console.log("Cancel");
