@@ -78,7 +78,6 @@
         <label for="key5-1">Show</label>
 </fieldset>
     </div>
-    
                 <div data-role="collapsible">
         <h3>Custom Token</h3>
 <p>Some iOS users experience issues with not getting data at all. If that's the case, go to the Fitbit page that says
@@ -112,7 +111,7 @@
       	  'batterybar':     Number( $("input[name=key4]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
       	  'debug':     Number( $("input[name=key5]:checked").val() ),
-      	  'debug':     $("input[name=token]").val(),
+      	  'token':     $("input[name=token]").val(),
         }
         console.log("Options: " + options);
         return options;
