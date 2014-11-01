@@ -65,6 +65,19 @@
 </fieldset>
 
     </div>
+    
+            <div data-role="collapsible">
+        <h3>Advanced</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Debug</legend>
+    <i>This will log input/output from the app to an app logger ie. CloudPebble/Natebean or terminal.</i>
+        <input name="key5" id="key5-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key5-0">Hide (saves battery)</label>
+        <input name="key5" id="key5-1" data-type="int" value="1" type="radio">
+        <label for="key5-1">Show</label>
+</fieldset>
+    </div>
 </div>
 <br />
         <div class="ui-body ui-body-c">
@@ -84,6 +97,7 @@
       	  'date':     Number( $("input[name=key3]:checked").val() ),
       	  'batterybar':     Number( $("input[name=key4]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
+      	  'debug':     Number( $("input[name=key5]:checked").val() ),
         }
         console.log("Options: " + options);
         return options;
@@ -106,6 +120,8 @@
           $("input[name=key3]").checkboxradio('refresh');
           $("input[name=key4][id=key4-"+ls_pto["batterybar"]+"]").prop('checked',true);
           $("input[name=key4]").checkboxradio('refresh');
+          $("input[name=key5][id=key5-"+ls_pto["debug"]+"]").prop('checked',true);
+          $("input[name=key5]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
