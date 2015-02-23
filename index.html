@@ -87,6 +87,19 @@
         <input name="key5" id="key5-1" data-type="int" value="1" type="radio">
         <label for="key5-1">Show</label>
 </fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Measurement Units Manual Override</legend>
+    <i>Overriding the unit will stop the Fitbit settings from saying that you use imperial/metric, and you have control.
+    
+    </i>
+        <input name="key6" id="key6-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key6-0">Do not override</label>
+        <input name="key6" id="key6-1" data-type="int" value="1" type="radio">
+        <label for="key6-1">Force imperial (mi)</label>
+        <input name="key6" id="key6-2" data-type="int" value="2" type="radio">
+        <label for="key6-2">Force metric (km)</label>
+</fieldset>
     </div>
 </div>
 <br />
@@ -107,6 +120,7 @@
       	  'batterybar':     Number( $("input[name=key4]:checked").val() ),
       	  'theme':     Number( $("input[name=key2]:checked").val() ),
       	  'debug':     Number( $("input[name=key5]:checked").val() ),
+      	  'dateformatoverride': Number($("input[name=key6]:checked").val()),
         }
         console.log("Options: " + options);
         return options;
@@ -131,6 +145,8 @@
           $("input[name=key4]").checkboxradio('refresh');
           $("input[name=key5][id=key5-"+ls_pto["debug"]+"]").prop('checked',true);
           $("input[name=key5]").checkboxradio('refresh');
+          $("input[name=key6][id=key6-"+ls_pto["dateformatoverride"]+"]").prop('checked',true);
+          $("input[name=key6]").checkboxradio('refresh');
           }
        }
         $("#b-cancel").click(function() {
